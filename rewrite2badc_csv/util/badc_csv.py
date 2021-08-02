@@ -1,16 +1,7 @@
-import sys
 
 import pandas as pd
 
-import pandas as pd
-from ar6_ch6_rcmipfigs.constants import BASE_DIR
 
-
-import ar6_ch6_rcmipfigs
-from pathlib import Path
-#path_FaIR_header_general_info = Path(BASE_DIR) /'misc/badc_header_FaIR_model.csv'
-#path_FaIR_warming_header_general_info = Path(BASE_DIR) /'misc/badc_header_FaIR_model_warming.csv'
-#path_FaIR_hist_header_general_info = Path(BASE_DIR) /'misc/badc_header_FaIR_model_hist.csv'
 
 
 # %%
@@ -109,11 +100,9 @@ def write_badc_header(
 
     df_orig = pd.read_csv(fp_orig, index_col=0,header=None)
     var_labs = df_orig.iloc[0,:]
-    var_labs
 
 
     _df = pd.read_csv(fp_orig,index_col=None, header=None)
-    _df
     df_header = df_glob
     for var in var_labs:
         print(var)
@@ -137,4 +126,5 @@ def write_badc_header(
 
     return df_out
 # %%
+
 
