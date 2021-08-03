@@ -99,7 +99,7 @@ def write_badc_header(
     df_glob = df_glob.append(df_extra_glob)
 
     df_orig = pd.read_csv(fp_orig, index_col=0,header=None)
-    var_labs = df_orig.iloc[0,:]
+    var_labs =  [df_orig.index[0]] + list(df_orig.iloc[0,:])
 
 
     _df = pd.read_csv(fp_orig,index_col=None, header=None)
